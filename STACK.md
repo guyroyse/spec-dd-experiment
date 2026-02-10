@@ -23,8 +23,9 @@
 
 ## Deployment
 
-- **Docker** — Dockerfiles for frontend and backend services
-- **Docker Compose** — Single `docker-compose.yaml` to spin up all services together
-- **Redis** — Use official `redis` image that includes JSON, Search, etc. Do not use Redis Stack as that has been deprecated.
-- **Frontend** — Nginx serving static build output, with reverse proxy to backend for `/api` routes
-- **Configuration** — Environment variables for Redis connection, session secret, and ports. Use .env file for local development.
+- **Docker** — Dockerfiles for frontend and backend services.
+- **Docker Compose** — Single `docker-compose.yaml` to spin up all services together.
+- **Environment Variables** — Use environment variables for configuration. Create a .env file with values for local use that can be overridden in production.
+- **Frontend** — Nginx serving static build output, with reverse proxy to backend for `/api` routes. Exposed on port 8080.
+- **Backend** — Express server for API routes. Exposed on port 3000.
+- **Redis** — Use official `redis` image that includes JSON, Search, etc. Do not use Redis Stack as that has been deprecated. Exposed on port 6379.
