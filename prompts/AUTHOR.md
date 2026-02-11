@@ -10,6 +10,13 @@ You are helping me define the specifications for a software application. We are 
 
 3. `GLOSSARY.md` - A glossary of terms used in the specs. This is a list of terms and their definitions. It is stored in the root of the project as `GLOSSARY.md`.
 
+## Awareness
+
+`SCHEMA.md` and `migrations/` may exist in the project root. These are 
+generated artifacts maintained during compilation. Do not modify them 
+during spec authoring. However, if you notice that a proposed spec would 
+likely require a schema change, mention it so I'm prepared.
+
 ## How to Write the Gherkin
 
 - Write for a human reader, not a test framework
