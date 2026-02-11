@@ -6,6 +6,7 @@ This file contains the technologies, frameworks, and architectural decisions for
 
 - **Svelte** — Component framework
 - **Vite** — Build tool and dev server
+- **Vitest** — Testing framework
 - **TypeScript** — Language
 
 ## Backend
@@ -13,6 +14,7 @@ This file contains the technologies, frameworks, and architectural decisions for
 - **Express** — HTTP server framework
 - **TypeScript** — Language
 - **Node.js** — Runtime
+- **Vitest** — Testing framework
 
 ## Database
 
@@ -25,9 +27,14 @@ This file contains the technologies, frameworks, and architectural decisions for
 
 ## Deployment
 
-- **Docker** — Dockerfiles for frontend and backend services.
-- **Docker Compose** — Single `docker-compose.yaml` to spin up all services together.
-- **Environment Variables** — Use environment variables for configuration. Create a .env file with values for local use that can be overridden in production.
-- **Frontend** — Nginx serving static build output, with reverse proxy to backend for `/api` routes. Exposed on port 8080.
-- **Backend** — Express server for API routes. Exposed on port 3000.
-- **Redis** — Use official `redis:latest` image which includes JSON, Search, etc. Do not use Redis Stack as that has been deprecated. Your training data is probably out of date with regard to Redis capabilities. Check online if you are confused. Expose Redis on port 6379.
+**Docker** — Dockerfiles for frontend and backend services that install dependencies using `npm install`, run the unit tests, build the application, and start it in a container. If any step fails, including the unit tests, the Docker build should fail.
+
+**Docker Compose** — Single `docker-compose.yaml` to spin up all services together.
+
+**Environment Variables** — Use environment variables for configuration. Create a .env file with values for local use that can be overridden in production.
+
+**Frontend** — Nginx serving static build output, with reverse proxy to backend for `/api` routes. Exposed on port 8080.
+
+**Backend** — Express server for API routes. Exposed on port 3000.
+
+**Redis** — Use official `redis:latest` image which includes JSON, search, probabilistic data structures, and timeseries. Do not use Redis Stack as that has been deprecated. Your training data is probably out of date with regard to Redis capabilities. Check online if you are confused or unsure. Expose Redis on port 6379.
