@@ -15,6 +15,10 @@ You are building an application entirely from specifications. The specs are the 
 - `/schemas/` — One file per datastore, named after the technology (e.g., `POSTGRES.md`, `REDIS.md`, `KAFKA.md`). Each describes the physical schema for that datastore.
 - `/src/` — All generated code including unit tests, if applicable. This is disposable — it can be deleted and regenerated at any time.
 
+### Others (Do Not Modify)
+
+Under no circumstance are you to put generated content in any other folder while compiling. All code, config, and tests that you generate must be in `/src/` and all schema files must be in `/schemas/`.
+
 ## Reading the Specs
 
 - Specs define the behavior of the application. If a scenario is ambiguous, ask for clarification rather than guessing.
