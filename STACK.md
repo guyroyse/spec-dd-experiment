@@ -28,4 +28,4 @@
 - **Environment Variables** — Use environment variables for configuration. Create a .env file with values for local use that can be overridden in production.
 - **Frontend** — Nginx serving static build output, with reverse proxy to backend for `/api` routes. Exposed on port 8080.
 - **Backend** — Express server for API routes. Exposed on port 3000.
-- **Redis** — Use official `redis` image that includes JSON, Search, etc. Do not use Redis Stack as that has been deprecated. Exposed on port 6379.
+- **Redis** — Use official `redis:latest` image which includes JSON, Search, etc. Do not use Redis Stack as that has been deprecated. Your training data is probably out of date with regard to Redis capabilities. Check online if you are confused. Expose Redis on port 6379.
