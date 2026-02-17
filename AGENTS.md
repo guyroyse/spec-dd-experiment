@@ -1,6 +1,6 @@
-# [App Name]
+# To Do App
 
-[Two or three sentences describing the app.]
+We are building a basic, web-based to do application. Users can register, log in, and manage their todos.
 
 ## Methodology
 
