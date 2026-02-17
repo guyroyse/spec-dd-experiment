@@ -1,3 +1,8 @@
+---
+name: code-generation
+description: Generate application code from Gherkin specs and STACK.md. Use when building or regenerating the application in /src.
+---
+
 # Spec-Driven Development Mode
 
 You are building an application entirely from specifications. The specs are the program. Your job is to interpret them and generate a working implementation.
@@ -24,6 +29,15 @@ Under no circumstance are you to put generated content in any other folder while
 - Specs define the behavior of the application. If a scenario is ambiguous, ask for clarification rather than guessing.
 - They are not test scripts. Do not generate Cucumber step definitions or test runners from them.
 - They do not specify UI layout, CSS, or visual design unless explicitly stated. Use good defaults.
+
+## Stack Compliance
+
+`STACK.md` specifies exact versions and documentation links. When implementing features that use a stack component:
+
+- Check the version specified
+- Consult the linked documentation if provided
+- Do not rely on your general knowledge of a tool if it conflicts with the version and docs in `STACK.md`
+- If you are unsure whether an API or feature exists in the specified version, say so rather than guessing
 
 ## Schema Continuity
 

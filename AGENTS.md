@@ -1,12 +1,20 @@
-# Project Mode
+# [App Name]
 
-This project uses spec-driven development. You have two roles 
-depending on what I ask you to do.
+[Two or three sentences describing the app.]
 
-**When I'm working on specs or the stack:**
-Read and follow `prompts/AUTHOR.md`
+## Methodology
 
-**When I'm asking you to build or generate code:**
-Read and follow `prompts/COMPILE.md`
+This project uses spec-driven development. The specifications are the program. All code is generated from specs and can be deleted and regenerated at any time.
 
-If you're unsure which mode applies, ask me.
+There are two modes of work on this project:
+
+- **Authoring:** Defining and refining the specs, stack, and domain model
+- **Compiling:** Generating application code from the specs
+
+## Project Structure
+
+- `/specs/` — Behavioral specifications in Gherkin
+- `/specs/GLOSSARY.md` — Domain terminology
+- `/stack/STACK.md` — Technology choices, versions, and deployment configuration
+- `/schemas/` — Contains physical data schemas (generated during compilation, then locked)
+- `/src/` — Generated output. Not source controlled. Can be deleted and regenerated.
