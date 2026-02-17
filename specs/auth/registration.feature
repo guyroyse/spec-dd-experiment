@@ -78,3 +78,4 @@ Feature: Registration
     Given the user is logged in
     When the user navigates to the registration page
     Then they are redirected to their todo list
+

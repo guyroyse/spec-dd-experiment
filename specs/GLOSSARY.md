@@ -12,7 +12,15 @@ A unique identifier for a user. Usernames are case-insensitive — "Alice", "ali
 
 ## Todo
 
-A task belonging to a user. Todos are private — a user can only see and manage their own todos.
+A task belonging to a user. Todos are private — a user can only see and manage their own todos. Each todo has:
+- **Text** (required): The task description
+- **Status**: Done or not done (toggleable)
+- **Priority** (required): Low, Medium, or High — defaults to Medium
+- **Due date** (optional): When the task should be completed
+
+## Priority
+
+The importance level of a todo. Can be Low, Medium, or High. Defaults to Medium when not specified.
 
 ## Session
 

@@ -11,3 +11,9 @@ Feature: Todo List
     When the user navigates to the todo list
     Then they are redirected to the login page
 
+  Scenario: Empty todo list
+    Given the user is logged in
+    And the user has no todos
+    When the user is on their todo list
+    Then they see a message indicating they have no todos
+
