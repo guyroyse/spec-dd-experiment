@@ -72,3 +72,15 @@ The application's data must survive recompilation. The `/src/` directory can be 
 ## Output
 
 All generated code goes in `/src/`. This includes source code, configuration, unit tests, and any other code artifacts. Use your judgment and the technologies specified in `/stack/STACK.md` to decide how to structure the contents.
+
+## Validation
+
+Code generation is not complete until the generated code passes validation. After generating code:
+
+1. **Build it.** Install dependencies, compile, and verify there are no build errors.
+2. **Test it.** Run the unit tests you generated.
+3. **Start it.** Launch the full application stack and verify it runs.
+4. **Fix what's broken.** If any step fails, diagnose the issue, fix it, and retry.
+5. **Update the stack if needed.** If you discover version incompatibilities (e.g., peer dependency conflicts), update `STACK.md` to reflect working versions.
+
+Only consider compilation complete when the application builds, tests pass, and the stack runs.
