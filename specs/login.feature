@@ -8,6 +8,13 @@ Feature: Login
     Then they are logged in
     And they are taken to their todo list
 
+  Scenario: Successful login with different casing
+    Given a user registered with the username "Alice"
+    And the user is on the login page
+    When the user submits "alice" as their username with the correct password
+    Then they are logged in
+    And their display name is "Alice"
+
   Scenario: Invalid credentials
     Given the user is on the login page
     When the user submits an incorrect username or password

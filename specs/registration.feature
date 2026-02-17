@@ -46,6 +46,13 @@ Feature: Registration
     Then they are told the username is not available
     And they remain on the registration page
 
+  Scenario: Username already taken with different casing
+    Given the user is on the registration page
+    And another user has already registered with the username "Alice"
+    When the user submits "ALICE" as their username
+    Then they are told the username is not available
+    And they remain on the registration page
+
   Scenario Outline: Password does not meet requirements
     Given the user is on the registration page
     When the user submits "<password>" as their password

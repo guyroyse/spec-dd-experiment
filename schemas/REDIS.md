@@ -4,10 +4,10 @@ This document describes the physical data schema for the Redis database.
 
 ## Key Patterns
 
-| Entity  | Key Pattern           | Type      | Description                    |
-|---------|----------------------|-----------|--------------------------------|
-| User    | `user:{username}`    | JSON      | User account data              |
-| Session | `session:{sessionId}`| JSON      | Session data with user reference|
+| Entity  | Key Pattern           | Type      | Description                      |
+|---------|-----------------------|-----------|----------------------------------|
+| User    | `user:{username}`     | JSON      | User account data                |
+| Session | `session:{sessionId}` | JSON      | Session data with user reference |
 
 ## User
 
@@ -21,14 +21,14 @@ This document describes the physical data schema for the Redis database.
 |----------------|--------|--------------------------------------------------|
 | username       | string | The user's display username (original casing)    |
 | passwordHash   | string | bcrypt hash of the user's password               |
-| createdAt      | string | ISO 8601 timestamp of account creation           |
+| createdAt      | number | Unix epoch seconds of account creation           |
 
 **Example:**
 ```json
 {
   "username": "Alice",
   "passwordHash": "$2b$10$...",
-  "createdAt": "2026-02-11T10:00:00.000Z"
+  "createdAt": 1739271600
 }
 ```
 
@@ -45,13 +45,13 @@ This document describes the physical data schema for the Redis database.
 | Field     | Type   | Description                              |
 |-----------|--------|------------------------------------------|
 | username  | string | The username this session belongs to     |
-| createdAt | string | ISO 8601 timestamp of session creation   |
+| createdAt | number | Unix epoch seconds of session creation   |
 
 **Example:**
 ```json
 {
   "username": "alice",
-  "createdAt": "2026-02-11T10:00:00.000Z"
+  "createdAt": 1739271600
 }
 ```
 
@@ -79,7 +79,8 @@ This document describes the physical data schema for the Redis database.
 - Alphanumeric characters only (no spaces or symbols)
 
 ### Timestamps
-- All timestamps are ISO 8601 format in UTC
+- All timestamps are Unix epoch seconds (seconds since 1970-01-01T00:00:00Z)
+- This format is compatible with Redis Query Engine for date-based searches
 
 ### Session Management
 - Sessions expire after 24 hours

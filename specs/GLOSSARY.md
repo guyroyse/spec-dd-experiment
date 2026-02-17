@@ -6,6 +6,10 @@ This file contains domain terms and definitions used in the specs. You and the c
 
 A person who has registered an account with the application. Users authenticate via username and password.
 
+## Username
+
+A unique identifier for a user. Usernames are case-insensitive — "Alice", "alice", and "ALICE" are considered the same username. The original casing entered during registration is preserved for display purposes.
+
 ## Todo
 
 A task belonging to a user. Todos are private — a user can only see and manage their own todos.
